@@ -5,10 +5,10 @@ public class App {
         Parada paradaOrigen = new Parada("1A", "Av. Carlos", "San Fernando", "Chaco");
         Parada paradaDestino = new Parada("2A", "Av. 25 Mayo", "Chamaco", "San Luis");
         Viaje viaje = new Viaje(6, 18, 1000000, paradaOrigen, paradaDestino, 50);
-        Pasajero pasajero1 = new Pasajero("Juan Perez", 99909);
-        Pasajero pasajero2 = new Pasajero("Rolando Deprisa", 1195609);
-        Pasajero pasajero3 = new Pasajero("Casi Mekago", 1233211233);
-        Vendedor vendedor = new Vendedor();
+        Pasajero pasajero1 = new Pasajero("Juanito", 42427842, "calle verdura podrida", 36240322, 1, 123123);
+        Pasajero pasajero2 = new Pasajero("Pepito", 5443211, "calle la tablada", 321654, 2, 123);
+        Pasajero pasajero3 = new Pasajero("Kechup", 984561, "calle lloros", 9089987, 3, 777);
+        VendedorTerminal vendedor = new VendedorTerminal(5, "Franco", 123321, "Calle cañon", 656456, paradaDestino);
         
         empresa.addParada(paradaOrigen);
         empresa.addParada(paradaDestino);

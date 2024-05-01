@@ -1,28 +1,7 @@
-import java.util.LinkedList;
-
-public class Vendedor {
-
-    // Atributos
-
-    // Asociacion Vendedor - Reserva
-    private LinkedList<Reserva> reservas;
-
-    // Constructor
-    public Vendedor() {
-        this.reservas = new LinkedList<Reserva>();
-    }
-    // Getters y Setters
+public interface Vendedor {
 
     // Metodos
-    public void addReserva(Reserva reserva) {
-        reservas.add(reserva);
-    }
+    void addReserva(Reserva reserva);
 
-    public void getReservasRealizadas() {
-        System.out.println("Reservas realizadas: ");
-        System.out.println("ApelNom | Nro Asiento");
-        for (Reserva reserva : reservas) {
-            System.out.println(reserva.getPasajero().getApelNom() + " | " + reserva.getAsiento().getNro());
-        }
-    }
+    void getReservasRealizadas();
 }

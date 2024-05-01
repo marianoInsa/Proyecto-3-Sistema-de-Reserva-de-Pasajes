@@ -1,17 +1,23 @@
-public class VendedorTerminal extends Vendedor {
+import java.util.LinkedList;
+
+public class VendedorTerminal extends Persona implements Vendedor {
 
     // Atributos
     private int nroVentanilla;
-    private String apelNom;
 
     // Asociacion VendedorTerminal - Parada
     private Parada parada;
 
+    // Asociacion Vendedor - Reserva
+    private LinkedList<Reserva> reservas;
+
     // Constructor
-    public VendedorTerminal(int nroVentanilla, String apelNom, Parada parada) {
+    public VendedorTerminal(int nroVentanilla, String apelNom, int dni, String direccion, int telefono, Parada parada) {
+        super(apelNom, dni, direccion, telefono);
         this.nroVentanilla = nroVentanilla;
         this.apelNom = apelNom;
         this.parada = parada;
+        this.reservas = new LinkedList<Reserva>();
     }
 
     // Getters y Setters
@@ -41,4 +47,23 @@ public class VendedorTerminal extends Vendedor {
 
     // Metodos
 
+    @Override
+    public void getReservasRealizadas() {
+        System.out.println("Reservas realizadas: ");
+        System.out.println("ApelNom | Nro Asiento");
+        for (Reserva reserva : reservas) {
+            System.out.println("Fecha: " + reserva.getFechaHoraReserva());
+            System.out.println("Nro Pasaje: " + reserva.getNroPasaje());
+            System.out.println("Monto Abonado: " + reserva.getMontoAbon());
+        }
+    }
+
+    @Override
+    public void addReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
+    public void limpiarReservas() {
+        reservas.clear();
+    }
 }
